@@ -16,6 +16,8 @@ import CommunityPaneMobile from 'app/components/elements/CommunityPaneMobile';
 import { APP_DOMAIN } from 'app/client_config';
 import AdSwipe from 'app/components/elements/AdSwipe';
 
+import NodeSelect from './NodeSelect';
+
 class PostsIndexLayout extends React.Component {
     static propTypes = {
         username: PropTypes.string,
@@ -107,6 +109,7 @@ class PostsIndexLayout extends React.Component {
 
                 <aside className="c-sidebar c-sidebar--left">
                     <Announcement />
+                    <NodeSelect />
                     <Topics
                         compact={false}
                         username={username}
