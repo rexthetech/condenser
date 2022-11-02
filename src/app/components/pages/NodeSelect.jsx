@@ -19,5 +19,5 @@ module.exports = {
             setRouteTag: () =>
                 dispatch(appActions.setRouteTag({ routeTag: 'NodeSelect' })),
         })
-    )(Privacy),
+    )(NodeSelect),
 };
