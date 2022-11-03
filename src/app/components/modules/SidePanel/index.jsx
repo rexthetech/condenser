@@ -46,6 +46,13 @@ const SidePanel = ({
         setUserPreferences(userPreferences);
         hideSidePanel();
     };
+    const handleApiChange = event => {
+        const locale = event.target.value;
+        const userPreferences = { ...user_preferences, endpoint };
+        console.log(endpoint);
+        // setUserPreferences(userPreferences);
+        hideSidePanel();
+    };
     const makeLink = (i, ix, arr) => {
         // A link is internal if it begins with a slash
         const isExternal = !i.link.match(/^\//) || i.isExternal;
@@ -68,6 +75,28 @@ const SidePanel = ({
                         <option value="ja">Japanese 日本語</option>
                         <option value="pl">Polish</option>
                         <option value="zh">Chinese 简体中文</option>
+                    </select>
+                </li>
+            );
+        }
+        if (i.key === 'switchApi') {
+            return (
+                <li key={ix} className={cn}>
+                    <select
+                        defaultValue={user_preferences.endpoint}
+                        onChange={e => handleApiChange(e)}
+                        onClick={e => e.nativeEvent.stopImmediatePropagation()}
+                        className="switchApi"
+                    >
+                        <option value="https://api.steemwow.com">
+                            https://api.steemwow.com
+                        </option>
+                        <option value="https://api.pennsif.net/">
+                            https://api.pennsif.net/
+                        </option>
+                        <option value="https://api.steemit.com/">
+                            https://api.steemit.com/
+                        </option>
                     </select>
                 </li>
             );
@@ -105,6 +134,11 @@ const SidePanel = ({
                 label: tt('navigation.language'),
                 link: '/',
                 key: `switchLanguage`,
+            },
+            {
+                label: 'Select API Endpoint',
+                link: '/',
+                key: `switchApi`,
             },
             {
                 label: tt('navigation.faq'),
