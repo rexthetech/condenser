@@ -234,6 +234,9 @@ export default connect(
             ? current_user.get('username')
             : state.offchain.get('account');
 
+        console.log("**** Could set here?");
+        console.log("**** " + state.app.getIn(['user_preferences', 'endpoint']);
+
         return {
             viewMode: state.app.get('viewMode'),
             error: state.app.get('error'),
