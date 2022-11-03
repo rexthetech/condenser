@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import config from 'config';
+
+import * as steem from '@steemit/steem-js';
 
 const ApiSelect = () => {
     function eventTest(e) {
