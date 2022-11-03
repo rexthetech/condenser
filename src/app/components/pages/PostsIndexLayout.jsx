@@ -15,7 +15,6 @@ import CommunityPane from 'app/components/elements/CommunityPane';
 import CommunityPaneMobile from 'app/components/elements/CommunityPaneMobile';
 import { APP_DOMAIN } from 'app/client_config';
 import AdSwipe from 'app/components/elements/AdSwipe';
-import ApiSelect from 'app/components/elements/ApiSelect';
 
 class PostsIndexLayout extends React.Component {
     static propTypes = {
@@ -108,7 +107,6 @@ class PostsIndexLayout extends React.Component {
 
                 <aside className="c-sidebar c-sidebar--left">
                     <Announcement />
-                    <ApiSelect />
                     <Topics
                         compact={false}
                         username={username}

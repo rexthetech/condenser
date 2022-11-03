@@ -45,7 +45,8 @@ $menu-width: 250px;
         background-color: inherit;
         border-bottom: 1px solid $color-blue-black-darkest;
       }
-      .language {
+      .language,
+      .switchApi{
         background-color: #11161A;
         color: #fff;
         border: none;
