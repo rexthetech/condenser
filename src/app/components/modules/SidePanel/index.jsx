@@ -6,6 +6,7 @@ import * as appActions from 'app/redux/AppReducer';
 import CloseButton from 'app/components/elements/CloseButton';
 import Icon from 'app/components/elements/Icon';
 import { Link } from 'react-router';
+import { changeEndpoint } from 'app/utils/APISwitcher';
 
 const SidePanel = ({
     alignment,
@@ -49,8 +50,9 @@ const SidePanel = ({
     const handleApiChange = event => {
         const endpoint = event.target.value;
         const userPreferences = { ...user_preferences, endpoint };
-        console.log(endpoint);
+        //console.log(endpoint);
         setUserPreferences(userPreferences);
+        changeEndpoint(endpoint);
         hideSidePanel();
     };
     const makeLink = (i, ix, arr) => {
