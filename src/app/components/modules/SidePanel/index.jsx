@@ -47,7 +47,7 @@ const SidePanel = ({
         hideSidePanel();
     };
     const handleApiChange = event => {
-        const locale = event.target.value;
+        const endpoint = event.target.value;
         const userPreferences = { ...user_preferences, endpoint };
         console.log(endpoint);
         setUserPreferences(userPreferences);
