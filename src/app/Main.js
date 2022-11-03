@@ -91,7 +91,7 @@ function runApp(initial_state) {
 
     const config = initial_state.offchain.config;
     //const endpoint = config.steemd_connection_client;
-    const endpoint = state.app.getIn(['user_preferences', 'endpoint'])
+    const endpoint = initial_state.app.getIn(['user_preferences', 'endpoint'])
     console.log("**** Endpoint set to " + endpoint);
     steem.api.setOptions({
         url: endpoint,
