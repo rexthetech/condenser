@@ -6,8 +6,10 @@ const ApiSelect = () => {
         e.preventDefault();
         console.log('**** mark: in');
 
-        if (typeof steem !== 'undefined')
+        if (typeof steem !== 'undefined') {
+            console.log('Attempting to change endpoint');
             steem.api.setOptions({ url: 'https://api.steemit.com' });
+        }
 
         console.log('**** mark: out');
     }
