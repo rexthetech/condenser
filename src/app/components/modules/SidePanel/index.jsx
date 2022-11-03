@@ -138,11 +138,6 @@ const SidePanel = ({
                 key: `switchLanguage`,
             },
             {
-                label: 'Select API Endpoint',
-                link: '/',
-                key: `switchApi`,
-            },
-            {
                 label: tt('navigation.faq'),
                 link: `/faq.html`,
             },
@@ -158,6 +153,13 @@ const SidePanel = ({
                     : tt('g.toggle_nightmode'),
                 link: '/',
                 onClick: toggleNightmode,
+            },
+        ],
+        endpoints: [
+            {
+                label: 'navigation.endpoint',
+                link: '/',
+                key: `switchApi`,
             },
         ],
         exchanges: [
@@ -267,6 +269,14 @@ const SidePanel = ({
                 </ul>
                 <ul className="vertical menu">
                     {sidePanelLinks.wallet.map(makeLink)}
+                </ul>
+                <ul className="vertical menu">
+                    <li>
+                        <a className="menu-section">
+                            {tt('navigation.api_endpoints')}
+                        </a>
+                    </li>
+                    {sidePanelLinks.endpoints.map(makeLink)}
                 </ul>
                 <ul className="vertical menu">
                     <li>
