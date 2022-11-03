@@ -50,7 +50,7 @@ const SidePanel = ({
         const locale = event.target.value;
         const userPreferences = { ...user_preferences, endpoint };
         console.log(endpoint);
-        // setUserPreferences(userPreferences);
+        setUserPreferences(userPreferences);
         hideSidePanel();
     };
     const makeLink = (i, ix, arr) => {
