@@ -236,6 +236,7 @@ export default connect(
 
         console.log("**** Could set here?");
         console.log("**** " + state.app.getIn(['user_preferences', 'endpoint']));
+        console.log("**** " + state.app.getIn(['user_preferences', 'nightmode']));
 
         return {
             viewMode: state.app.get('viewMode'),
