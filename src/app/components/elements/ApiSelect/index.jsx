@@ -7,7 +7,7 @@ const ApiSelect = () => {
         console.log('Event fired!');
     }
 
-    return <div className="NodeSelect row" onclick={eventTest}>Placeholder</div>;
+    return <div className="NodeSelect row" onClick={eventTest}>Placeholder</div>;
 };
 
 export default ApiSelect;
