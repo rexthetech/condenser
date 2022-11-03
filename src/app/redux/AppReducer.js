@@ -30,6 +30,7 @@ export const defaultState = Map({
         currency: 'USD',
         defaultBlogPayout: '50%',
         defaultCommentPayout: '50%',
+        endpoint: 'https://api.steemwow.com',
     }),
     featureFlags: Map({}),
     modalLoading: false,
