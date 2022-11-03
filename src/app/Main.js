@@ -90,9 +90,11 @@ function runApp(initial_state) {
     }
 
     const config = initial_state.offchain.config;
-    console.log("**** Endpoint set");
+    //const endpoint = config.steemd_connection_client;
+    const endpoint = state.app.getIn(['user_preferences', 'endpoint'])
+    console.log("**** Endpoint set to " + endpoint);
     steem.api.setOptions({
-        url: config.steemd_connection_client,
+        url: endpoint,
         retry: true,
         useAppbaseApi: !!config.steemd_use_appbase,
     });
