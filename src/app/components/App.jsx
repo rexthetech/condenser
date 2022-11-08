@@ -21,6 +21,7 @@ import WelcomePanel from 'app/components/elements/WelcomePanel';
 import tt from 'counterpart';
 import PageViewsCounter from 'app/components/elements/PageViewsCounter';
 import { VIEW_MODE_WHISTLE } from 'shared/constants';
+import { changeEndpoint } from 'app/utils/APISwitcher';
 
 class App extends React.Component {
     constructor(props) {
@@ -44,8 +45,10 @@ class App extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const { nightmodeEnabled } = nextProps;
+        const { nightmodeEnabled, endpoint } = nextProps;
         this.toggleBodyNightmode(nightmodeEnabled);
+        console.log ("!!! Firing prop");
+        changeEndpoint(endpoint);
     }
 
     componentWillMount() {
@@ -61,8 +64,10 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        const { nightmodeEnabled } = this.props;
+        const { nightmodeEnabled, endpoint } = this.props;
         this.toggleBodyNightmode(nightmodeEnabled);
+        console.log ("!!! Firing mount");
+        changeEndpoint(endpoint);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -70,6 +75,7 @@ class App extends React.Component {
             pathname,
             new_visitor,
             nightmodeEnabled,
+            endpoint,
             showAnnouncement,
         } = this.props;
         const n = nextProps;
@@ -79,6 +85,7 @@ class App extends React.Component {
             this.state.showBanner !== nextState.showBanner ||
             this.state.showCallout !== nextState.showCallout ||
             nightmodeEnabled !== n.nightmodeEnabled ||
+            endpoint !== n.endpoint ||
             showAnnouncement !== n.showAnnouncement
         );
     }
@@ -93,6 +100,7 @@ class App extends React.Component {
             children,
             new_visitor,
             nightmodeEnabled,
+            endpoint,
             viewMode,
             pathname,
             category,
@@ -265,12 +273,12 @@ export default connect(
                 'user_preferences',
                 'nightmode',
             ]),
-/*
+
             endpoint: state.app.getIn([
                 'user_preferences',
                 'endpoint',
             ]),
-  */          
+
             pathname: ownProps.location.pathname,
             order: ownProps.params.order,
             category: ownProps.params.category,
