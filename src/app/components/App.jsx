@@ -242,6 +242,14 @@ export default connect(
         var endpoint = state.app.getIn(['user_preferences', 'endpoint'])
         if (endpoint) {
             console.log("**** Found ("+endpoint+")");
+            /*
+            steem.api.setOptions({
+                url: endpoint,
+                retry: true,
+                useAppbaseApi: !!config.steemd_use_appbase,
+            });*/
+        } else {
+            console.log("**** No scope");
         }
 
         return {
