@@ -297,6 +297,7 @@
         "about": "About Steemit, Inc.",
         "explore": "Explore",
         "APP_NAME_whitepaper": "%(APP_NAME)s Whitepaper",
+        "api_endpoints": "Steem API:",
         "third_party_exchanges": "Third-party exchanges:",
         "buy_LIQUID_TOKEN": "Buy %(LIQUID_TOKEN)s",
         "sell_LIQUID_TOKEN": "Sell %(LIQUID_TOKEN)s",
