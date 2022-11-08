@@ -234,9 +234,15 @@ export default connect(
             ? current_user.get('username')
             : state.offchain.get('account');
 
+        /*
         console.log("**** Could set here?");
         console.log("**** " + state.app.getIn(['user_preferences', 'endpoint']));
         console.log("**** " + state.app.getIn(['user_preferences', 'nightmode']));
+        */
+        var endpoint = state.app.getIn(['user_preferences', 'endpoint'])
+        if (endpoint) {
+            console.log("**** Found ("+endpoint+")");
+        }
 
         return {
             viewMode: state.app.get('viewMode'),
@@ -251,6 +257,12 @@ export default connect(
                 'user_preferences',
                 'nightmode',
             ]),
+/*
+            endpoint: state.app.getIn([
+                'user_preferences',
+                'endpoint',
+            ]),
+  */          
             pathname: ownProps.location.pathname,
             order: ownProps.params.order,
             category: ownProps.params.category,
